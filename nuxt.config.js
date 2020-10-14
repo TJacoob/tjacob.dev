@@ -17,7 +17,9 @@ export default {
 	},
 
 	// Global CSS (https://go.nuxtjs.dev/config-css)
-	css: [],
+	css: [
+		'~assets/styles/tailwind.css',
+	],
 
 	// Plugins to run before rendering page (https://go.nuxtjs.dev/config-plugins)
 	plugins: [],
@@ -35,11 +37,28 @@ export default {
 	modules: [
 		// https://go.nuxtjs.dev/content
 		'@nuxt/content',
+		'nuxt-purgecss',
 	],
+
+	purgeCSS: {
+		mode: 'postcss',
+		enabled: (process.env.NODE_ENV === 'production')
+	},
 
 	// Content module configuration (https://go.nuxtjs.dev/content-config)
 	content: {},
 
 	// Build Configuration (https://go.nuxtjs.dev/config-build)
-	build: {},
+	build: {
+		postcss: {
+			plugins: {
+				'postcss-import': {},
+				tailwindcss: './tailwind.config.js',
+				'postcss-nested': {}
+			}
+		},
+		preset: {
+			stage: 1 // see https://tailwindcss.com/docs/using-with-preprocessors#future-css-featuress
+		}
+	},
 }
