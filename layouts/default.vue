@@ -1,16 +1,20 @@
 <template>
 	<div>
-		<Navbar/>
-		<div class="content">
-			<Nuxt />
+		<div class="flex flex-wrap overflow-hidden">
+			<div class="h-screen w-1/6 overflow-hidden">
+				<Sidebar/>
+			</div>
+			<div class="h-screen w-5/6 overflow-x-hidden overflow-y-auto">
+				<Nuxt />
+			</div>
 		</div>
 	</div>
 </template>
 
 <script>
-import Navbar from "@/components/Navbar";
+import Sidebar from "@/components/Sidebar";
 
 export default {
-	components: {Navbar}
+	components: {Sidebar}
 }
 </script>

@@ -1,9 +1,7 @@
 <template>
 	<div class="container">
-		<div>
-			<h1>tjacob.dev</h1>
-			<h3>Portfolium Page for 2020</h3>
-		</div>
+		<span>tjacob.dev</span>
+		<span>Portfolium Page for 2020</span>
 	</div>
 </template>
 

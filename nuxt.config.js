@@ -31,6 +31,8 @@ export default {
 	buildModules: [
 		// https://go.nuxtjs.dev/tailwindcss
 		'@nuxtjs/tailwindcss',
+		// https://github.com/nuxt-community/google-fonts-module
+		'@nuxtjs/google-fonts',
 	],
 
 	// Modules (https://go.nuxtjs.dev/config-modules)
@@ -38,6 +40,7 @@ export default {
 		// https://go.nuxtjs.dev/content
 		'@nuxt/content',
 		'nuxt-purgecss',
+		'@tailwindcss/ui',
 	],
 
 	purgeCSS: {
@@ -47,6 +50,14 @@ export default {
 
 	// Content module configuration (https://go.nuxtjs.dev/content-config)
 	content: {},
+
+	googleFonts: {
+		families: {
+			'Titillium Web': {
+				wght: [400, 700],
+			},
+		}
+	},
 
 	// Build Configuration (https://go.nuxtjs.dev/config-build)
 	build: {

@@ -2,5 +2,8 @@
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
 
-
-
+@layer base {
+	html{
+		@apply font-TitilliumWeb;
+	}
+}
