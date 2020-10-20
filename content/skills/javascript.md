@@ -1,7 +1,7 @@
 ---
 title: Javascript
 description: 'Javascript'
-rating: 3/5
+rating: 3
 ---
 
 # Title

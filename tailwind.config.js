@@ -22,7 +22,9 @@ module.exports = {
 			}),
 		},
 	},
-	variants: {},
+	variants: {
+		textColor: ['responsive', 'hover', 'focus', 'group-hover'],
+	},
 	plugins: [],
 	purge: {
 		enabled: process.env.NODE_ENV === 'production',

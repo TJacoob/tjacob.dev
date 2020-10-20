@@ -1,7 +1,7 @@
 ---
-title: NuxtJS
-description: 'NuxtJS'
-rating: 1
+title: VueJS
+description: 'VueJS'
+rating: 6
 ---
 
 ### Title

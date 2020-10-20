@@ -61,7 +61,7 @@ export default {
 	googleFonts: {
 		families: {
 			'Titillium Web': {
-				wght: [300, 600],
+				wght: [400, 600],
 			},
 		}
 	},

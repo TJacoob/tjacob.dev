@@ -1,5 +1,5 @@
 <template>
-	<div class="flex flex-col h-full bg-blue">
+	<div class="flex flex-col h-full bg-gradient-to-bl from-blue to-blue-lighter">
 		<div class="w-full mt-20 text-center">
 			<div class="px-16 py-4">
 				<img src="~/assets/images/profile.png" class="rounded-full border-4 border-white" />
