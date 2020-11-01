@@ -25,7 +25,8 @@ module.exports = {
 	variants: {
 		textColor: ['responsive', 'hover', 'focus', 'group-hover'],
 	},
-	plugins: [],
+	plugins: [
+	],
 	purge: {
 		enabled: process.env.NODE_ENV === 'production',
 		content: [
