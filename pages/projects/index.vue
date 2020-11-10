@@ -6,8 +6,8 @@
 		<div class="container">
 			<div class="grid grid-cols-1 md:grid-cols-2 gap-8 -mt-12 md:mt-5 mb-5">
 				<nuxt-link v-for="project of projects" :to="{ name: 'projects-slug', params: { slug: project.slug }}" :key="project.slug"
-						   class="block overflow-hidden bg-white rounded-lg shadow-md hover:shadow-lg transition duration-200">
-					<div class="w-full h-56 overflow-hidden bg-cover bg-center bg-blue flex py-2 px-3 md:px-5" :style="{backgroundImage:'url('+require(`~/static/images/${project.cover}`)+')'}">
+						   class="flex flex-col overflow-hidden bg-white rounded-lg shadow-md hover:shadow-lg transition duration-200 group">
+					<div class="w-full h-56 overflow-hidden bg-cover bg-center bg-blue flex py-2 px-3 md:px-5" :style="{backgroundImage:'url('+require(`~/static/images/${project.image_1}`)+')'}">
 						<div class="w-full mt-auto flex flex-wrap -mb-2">
 							<div v-for="tech in techsArray(project)"
 								 class="rounded-lg px-3 py-1 text-white bg-black bg-opacity-25 hover:bg-opacity-75 transition duration-200  inline text-sm mr-2 mb-2 whitespace-no-wrap"
@@ -16,12 +16,18 @@
 							</div>
 						</div>
 					</div>
-					<div class="py-3 px-3 md:px-5">
+					<div class="pt-4 px-4 md:px-5">
 						<p class="text-xl font-semibold mb-1">
 							{{project.title}}
 							<span class="font-light text-gray-600">({{project.year}})</span>
 						</p>
-						<p class="leading-snug mb-1">{{project.description}}</p>
+						<p class="leading-snug">{{project.description}}</p>
+					</div>
+					<div class="pb-4 px-4 md:px-5 mt-auto ml-auto">
+						<div class="text-blue text-sm uppercase font-semibold mt-4">
+							<div class="inline-block group-hover:transform group-hover:-translate-x-1 transition duration-200">Read Details</div>
+							<font-awesome-icon :icon="{prefix:'fas',iconName:'chevron-right'}" class="ml-1" />
+						</div>
 					</div>
 				</nuxt-link>
 			</div>
@@ -41,7 +47,6 @@ export default {
 		return { projects }
 	},
 	methods: {
-		// Going to make some small js tweaks
 		techsArray(project) {
 			return project.techs.split(',');
 		}
