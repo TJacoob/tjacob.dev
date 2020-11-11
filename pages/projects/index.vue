@@ -1,6 +1,6 @@
 <template>
 	<div>
-		<div class="w-full bg-blue md:bg-transparent container pt-12 pb-12 md:mb-3 md:pb-0">
+		<div class="w-full bg-blue md:bg-transparent container pt-12 pb-12 md:mb-3 md:pb-0 md:pt-8">
 			<h1 class="text-white md:text-blue font-semibold text-3xl pb-2 border-b-2 border-blue">Projects</h1>
 		</div>
 		<div class="container">

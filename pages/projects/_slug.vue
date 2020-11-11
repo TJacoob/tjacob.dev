@@ -6,48 +6,66 @@
 				<div class="inline-block group-hover:transform group-hover:translate-x-1 transition duration-200">Projects</div>
 			</div>
 		</nuxt-link>
-		<div class="container">
-			<article class="grid grid-cols-2 gap-12">
+		<article class="container">
+			<div class="flex flex-col md:flex-row">
 				<!-- Slider -->
-				<div class="border border-gray-500 h-64 w-full bg-white flex overflow-hidden rounded-lg relative">
+				<div class="md:w-3/5 h-64 md:h-96 pattern-diagonal flex overflow-hidden shadow-lg rounded-t-lg md:rounded-lg relative z-20 md:z-10 -mt-12 md:my-8 ">
 					<!-- Controls -->
-					<div @click="slideLeft" v-show="moreThanOneSlide" class="absolute z-20 text-white w-10 h-full flex inset-y-0 left-0 group cursor-pointer">
+					<div @click="slideLeft" v-show="moreThanOneSlide" class="absolute z-20 text-blue-lighter w-10 h-full flex inset-y-0 left-0 group cursor-pointer md:ml-2">
 						<font-awesome-icon id="slideLeft"  :icon="{prefix:'fas',iconName:'chevron-left'}" size="2x"
-										   class="mx-auto my-auto transition duration-200 group-hover:transform group-hover:-translate-x-2 text-white opacity-25"
+										   class="mx-auto my-auto transition duration-200 group-hover:transform group-hover:-translate-x-2 opacity-25"
 						/>
 					</div>
-					<div @click="slideRight" v-show="moreThanOneSlide" class="absolute z-20 text-white w-10 h-full flex inset-y-0 right-0 group cursor-pointer">
+					<div @click="slideRight" v-show="moreThanOneSlide" class="absolute z-20 text-blue w-10 h-full flex inset-y-0 right-0 group cursor-pointer md:mr-6">
 						<font-awesome-icon id="slideRight" :icon="{prefix:'fas',iconName:'chevron-right'}" size="2x"
-										   class="mx-auto my-auto transition duration-200 group-hover:transform group-hover:-translate-x-2 text-white"
+										   class="mx-auto my-auto transition duration-200 group-hover:transform group-hover:-translate-x-2"
 						/>
 					</div>
 					<!-- Slides -->
-					<div id="slide-1" class="absolute inset-0 w-full h-full bg-pink-500 text-white flex items-center justify-center text-5xl transition-all ease-in-out duration-1000 transform translate-x-0 slide">Hello 1</div>
-					<div id="slide-2" class="absolute inset-0 w-full h-full bg-blue text-white flex items-center justify-center text-5xl transition-all ease-in-out duration-1000 transform translate-x-full slide">Hello 2</div>
-					<div id="slide-3" class="absolute inset-0 w-full h-full bg-red-400 text-white flex items-center justify-center text-5xl transition-all ease-in-out duration-1000 transform translate-x-full slide">Hello 3</div>
-					<div id="slide-4" class="absolute inset-0 w-full h-full bg-yellow-200 text-white flex items-center justify-center text-5xl transition-all ease-in-out duration-1000 transform translate-x-full slide">Hello 4</div>
-					<!--
-					<img :src="require(`~/static/images/${project.image_1}`)" class="h-full w-auto mx-auto"/>
-					<img :src="require(`~/static/images/${project.image_2}`)" class="h-full w-auto mx-auto"/>
-					<img :src="require(`~/static/images/${project.image_3}`)" class="h-full w-auto mx-auto"/>
-					-->
+					<div id="slide-1" v-show="project.image_1 !== undefined" class="absolute inset-0 w-full h-full text-white flex items-center justify-center text-5xl transition-all ease-in-out duration-1000 transform translate-x-0 slide">
+						<img :src="require(`~/static/images/${project.image_1}`)" class="h-full w-auto mx-auto"/>
+					</div>
+					<div id="slide-2" v-show="project.image_2 !== undefined" class="absolute inset-0 w-full h-full text-white flex items-center justify-center text-5xl transition-all ease-in-out duration-1000 transform translate-x-full slide">
+						<img :src="require(`~/static/images/${project.image_2}`)" class="h-full w-auto mx-auto"/>
+					</div>
+					<div id="slide-3" v-show="project.image_3 !== undefined" class="absolute inset-0 w-full h-full text-white flex items-center justify-center text-5xl transition-all ease-in-out duration-1000 transform translate-x-full slide">
+						<img :src="require(`~/static/images/${project.image_3}`)" class="h-full w-auto mx-auto"/>
+					</div>
+					<div id="slide-4" v-show="project.image_4 !== undefined" class="absolute inset-0 w-full h-full text-white flex items-center justify-center text-5xl transition-all ease-in-out duration-1000 transform translate-x-full slide">
+						<img :src="require(`~/static/images/${project.image_4}`)" class="h-full w-auto mx-auto"/>
+					</div>
 				</div>
-				<div class="">
-					<h1 class="text-3xl font-semibold mb-3">
+				<div class="md:w-2/5 bg-blue-lighter text-white rounded-b-md md:rounded-md p-8 md:-mx-4 z-10 md:z-20 shadow-md flex flex-col -mt-4 md:mt-0">
+					<h1 class="text-3xl font-semibold mb-5 pb-3 border-b-2 border-white ">
 						{{ project.title }}
-						<span class="font-normal text-gray-600 text-xl">({{ project.year }})</span>
+						<span class="font-normal text-gray-300 text-xl">({{ project.year }})</span>
 					</h1>
 					<div class="mb-1">
 						<div v-for="tech in techsArray(project)"
-							 class="rounded-lg cursor-default px-3 py-1 text-white bg-black bg-opacity-25 hover:bg-opacity-75 transition duration-200  inline-block text-sm mr-2 mb-2 whitespace-no-wrap"
+							 class="rounded-lg cursor-default px-3 py-1 text-white bg-blue transition duration-200 inline-block text-sm mr-2 mb-2 whitespace-no-wrap"
 						>
 							{{tech}}
 						</div>
 					</div>
-					<nuxt-content :document="project" />
+					<div class="mb-5">
+						{{project.description}}
+					</div>
+					<div class="flex mt-auto">
+						<a v-if="project.github!==undefined" :href="project.github" target="_blank" class="bg-blue text-white w-1/2 inline-flex items-center rounded-md p-3 group mr-2">
+							<font-awesome-icon :icon="{prefix:'fab',iconName:'github'}" size="lg" />
+							<div class="ml-3 mr-1 font-semibold group-hover:transform group-hover:-translate-x-1 transition duration-200">Github</div>
+						</a>
+						<a v-if="project.website!==undefined" :href="project.website" target="_blank" class="bg-blue text-white w-1/2 items-center inline-flex rounded-md p-3 group mr-2">
+							<font-awesome-icon :icon="{prefix:'fas',iconName:'external-link-alt'}" size="md" />
+							<div class="ml-3 mr-1 font-semibold group-hover:transform group-hover:-translate-x-1 transition duration-200">Website</div>
+						</a>
+					</div>
 				</div>
-			</article>
-		</div>
+			</div>
+			<div class="flex text-gray-800 mt-6">
+				<nuxt-content :document="project" />
+			</div>
+		</article>
 	</div>
 </template>
 
@@ -61,7 +79,6 @@ export default {
 	},
 	async asyncData({$content, params}) {
 		const project = await $content('projects', params.slug).fetch()
-		console.log(project);
 		let slides = 0;
 		for (var i = 1; i <= 4; i++) {
 			project['image_'+i]!==undefined ? slides += 1 :'';

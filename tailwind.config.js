@@ -20,9 +20,16 @@ module.exports = {
 				center: true,
 				padding: theme("spacing.4"),
 			}),
+			height: theme => ({
+				"72": "18rem",
+				"80": "20rem",
+				"88": "22rem",
+				"96": "24rem",
+			}),
 		},
 	},
 	variants: {
+		borderWidth: ['responsive', 'hover', 'focus', 'group-hover'],
 		textColor: ['responsive', 'hover', 'focus', 'group-hover'],
 		transform: ['responsive', 'hover', 'focus', 'group-hover'],
 		translate: ['responsive', 'hover', 'focus', 'group-hover'],
