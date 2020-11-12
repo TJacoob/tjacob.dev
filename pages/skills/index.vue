@@ -1,25 +1,31 @@
 <template>
-	<div class="container">
-		<h1 class="text-blue font-semibold text-3xl">Skills</h1>
-		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam ultrices quis mi ut tristique. Proin id consectetur lectus. Integer fringilla, orci sit amet elementum auctor, purus justo hendrerit lorem, quis lacinia ipsum eros nec dui. Quisque viverra risus posuere mattis euismod. Praesent vel facilisis dolor.</p>
-		<div class="flex mt-5 -mr-5">
-			<div v-for="skill of topSkills" :key="skill.slug"
-				 class="w-1/6 flex mb-5 mr-5 bg-white text-blue border-blue h-24 px-5 py-3 rounded-lg bg-gradient-to-bl group hover:from-blue hover:to-blue-lighter hover:text-white transition duration-200 shadow-md">
-				<div class="mr-auto mb-auto">
-					<span class="font-semibold text-5xl leading-snug">{{ skill.rating }}</span>
-					<span class="text-gray-500 group-hover:text-gray-300 text-md">/10</span>
-				</div>
-				<span class="ml-auto font-regular text-lg self-center mt-auto">{{ skill.title }}</span>
-			</div>
+	<div>
+		<div class="w-full bg-blue md:bg-transparent container pt-12 pb-12 md:mb-3 md:pb-0 md:pt-8">
+			<h1 class="text-white md:text-blue font-semibold text-3xl pb-2 border-b-2 border-blue">Skills</h1>
 		</div>
-		<div class="flex mt-5">
-			<div v-for="skill of otherSkills" :key="skill.slug"
-				 class="w-1/6 flex mb-5 mr-5 bg-white text-blue border-blue h-24 px-5 py-3 rounded-lg bg-gradient-to-bl hover:from-blue hover:to-blue-lighter hover:text-white transition duration-200 shadow-md">
-				<div class="mr-auto mb-auto">
-					<span class="font-semibold text-5xl leading-snug">{{ skill.rating }}</span>
-					<span class="text-gray-500 text-md">/10</span>
+		<div class="container">
+			<div class="grid grid-cols-2 md:grid-cols-6 gap-4 md:gap-6 -mt-12 md:mt-8 mb-4">
+				<div v-for="skill of topSkills" :key="skill.slug"
+					 class="flex flex-col md:flex-row bg-white text-blue border-blue h-24 px-5 py-3 rounded-lg bg-gradient-to-bl group hover:from-blue hover:to-blue-lighter hover:text-white transition duration-200 shadow-md">
+					<div class="mr-auto mb-auto">
+						<span class="font-semibold text-4xl md:text-5xl leading-tight">{{ skill.rating }}</span>
+						<span class="text-gray-500 group-hover:text-gray-300 text-md">/10</span>
+					</div>
+					<span class="ml-auto font-regular text-lg self-center mt-auto">{{ skill.title }}</span>
 				</div>
-				<span class="ml-auto font-regular text-lg self-center mt-auto">{{ skill.title }}</span>
+			</div>
+			<div class="mb-4">
+				<div class="">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus consequuntur est ex illum neque officiis quaerat quasi quidem quos voluptates. Beatae blanditiis dolorum excepturi facere ipsum laboriosam recusandae reiciendis! Libero.</div>
+			</div>
+			<div class="grid grid-cols-2 md:grid-cols-6 gap-4 md:gap-6 mb-4">
+				<div v-for="skill of otherSkills" :key="skill.slug"
+					 class="flex flex-col md:flex-row bg-white text-blue border-blue h-24 px-5 py-3 rounded-lg bg-gradient-to-bl group hover:from-blue hover:to-blue-lighter hover:text-white transition duration-200 shadow-md">
+					<div class="mr-auto mb-auto">
+						<span class="font-semibold text-4xl md:text-5xl leading-tight">{{ skill.rating }}</span>
+						<span class="text-gray-500 group-hover:text-gray-300 text-md">/10</span>
+					</div>
+					<span class="ml-auto font-regular text-lg self-center mt-auto">{{ skill.title }}</span>
+				</div>
 			</div>
 		</div>
 	</div>
