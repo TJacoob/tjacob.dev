@@ -4,16 +4,17 @@
 			<h1 class="text-white md:text-blue font-semibold text-3xl pb-2 border-b-2 border-blue">Previous Work</h1>
 		</div>
 		<div class="container">
-			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam ultrices quis mi ut tristique. Proin id consectetur lectus. Integer fringilla, orci sit amet elementum auctor, purus justo hendrerit lorem, quis lacinia ipsum eros nec dui. Quisque viverra risus posuere mattis euismod. Praesent vel facilisis dolor.</p>
-			<div v-for="work of works" :key="work.slug" class="flex bg-white rounded-3xl shadow-md ml-12 mt-8">
-				<img class="inline w-32 h-32 mt-5 rounded-full border-2 border-blue-lighter -ml-12 bg-white" src="https://via.placeholder.com/150"  />
-				<div class="py-5 px-5">
-					<h2 class="inline text-blue font-semibold text-xl">
-						{{ work.position }}
-						<a :href="work.website" target="_blank" class="font-light hover:text-blue-lighter transition duration-200">@ {{ work.company }}</a>
-					</h2>
-					<span class="ml-1 text-gray-600">( {{ work.started }} - {{ work.ended }} )</span>
-					<nuxt-content :document="work" />
+			<div class="grid grid-cols-1 gap-24 md:gap-10 mt-8 md:mt-8 mb-4">
+				<div v-for="work of works" :key="work.slug" class="flex flex-col md:flex-row bg-white rounded-3xl shadow-md md:ml-12">
+					<img class="inline w-32 h-32 rounded-full border-2 border-blue-lighter bg-white mx-auto -mt-20 md:-ml-16 md:mt-5" src="https://via.placeholder.com/150"  />
+					<div class="px-5 pt-3 pb-8 md:pt-5 md:pb-6">
+						<h2 class="inline text-blue font-semibold text-xl">
+							{{ work.position }}
+							<a :href="work.website" target="_blank" class="font-light hover:text-blue-lighter transition duration-200">@ {{ work.company }}</a>
+						</h2>
+						<span class="block md:inline md:ml-1 text-gray-600 mb-3 md:mb-0">( {{ work.started }} - {{ work.ended }} )</span>
+						<nuxt-content :document="work" />
+					</div>
 				</div>
 			</div>
 		</div>
