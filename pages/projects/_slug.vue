@@ -35,7 +35,7 @@
 						<img :src="require(`~/static/images/${project.image_4}`)" class="h-full w-auto mx-auto"/>
 					</div>
 				</div>
-				<div class="md:w-2/5 bg-blue-lighter text-white rounded-b-md md:rounded-md p-8 md:-mx-4 z-10 md:z-20 shadow-md flex flex-col -mt-4 md:mt-0">
+				<div class="md:w-2/5 bg-blue-lighter text-white rounded-b-md md:rounded-md py-8 px-6 md:-mx-4 z-10 md:z-20 shadow-md flex flex-col -mt-4 md:mt-0">
 					<h1 class="text-3xl font-semibold mb-5 pb-3 border-b-2 border-white ">
 						{{ project.title }}
 						<span class="font-normal text-gray-300 text-xl">({{ project.year }})</span>

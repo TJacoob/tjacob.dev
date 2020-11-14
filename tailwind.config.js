@@ -34,6 +34,8 @@ module.exports = {
 		transform: ['responsive', 'hover', 'focus', 'group-hover'],
 		translate: ['responsive', 'hover', 'focus', 'group-hover'],
 		gradientColorStops: ['responsive', 'hover', 'focus', 'active', 'group-hover'],
+		backgroundOpacity: ['responsive', 'hover', 'focus', 'active', 'group-hover'],
+		margin: ['responsive', 'hover', 'focus', 'active', 'group-hover'],
 		transitionProperty: ['responsive', 'hover', 'focus'],
 	},
 	plugins: [
