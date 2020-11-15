@@ -1,41 +1,47 @@
 <template>
 	<div class="flex flex-col h-full bg-gradient-to-tr from-blue to-blue-lighter">
 		<div class="w-full text-left px-10 py-4 md:py-20 my-auto md:my-0">
-			<NuxtLink :to="{name: 'index'}">
-				<div class="py-4 pr-48 md:pr-24">
+			<div class="w-32 h-32 mb-3">
+				<NuxtLink :to="{name: 'index'}" @click.native="toggleNavbar">
 					<img src="~/assets/images/profile.png" class="rounded-full border-4 border-white" />
-				</div>
-			</NuxtLink>
+				</NuxtLink>
+			</div>
 			<span class="block text-white text-3xl font-semibold leading-tight">Tomás Jacob</span>
 			<span class="block text-white text-xl leading-tight pb-2">Junior Web Developer</span>
 			<nav class="my-4 py-4 border-t border-b">
 				<NuxtLink
 					:to="{ name: 'aboutme' }"
+					@click.native="toggleNavbar"
 					class="block text-lg md:text-xl py-2 text-white hover:bg-blue-lighter transition duration-200 -mx-4 px-4 rounded-lg">
 					About Me
 				</NuxtLink>
 				<NuxtLink
 					:to="{ name: 'work' }"
+					@click.native="toggleNavbar"
 					class="block text-lg md:text-xl py-2 text-white hover:bg-blue-lighter transition duration-200 -mx-4 px-4 rounded-lg">
 					Previous Work
 				</NuxtLink>
 				<NuxtLink
 					:to="{ name: 'projects' }"
+					@click.native="toggleNavbar"
 					class="block text-lg md:text-xl py-2 text-white  hover:bg-blue-lighter transition duration-200 -mx-4 px-4 rounded-lg">
 					Projects
 				</NuxtLink>
 				<NuxtLink
 					:to="{ name: 'skills' }"
+					@click.native="toggleNavbar"
 					class="block text-lg md:text-xl py-2 text-white  hover:bg-blue-lighter transition duration-200 -mx-4 px-4 rounded-lg">
 					Skills
 				</NuxtLink>
 				<NuxtLink
 					:to="{ name: 'education' }"
+					@click.native="toggleNavbar"
 					class="block text-lg md:text-xl py-2 text-white  hover:bg-blue-lighter transition duration-200 -mx-4 px-4 rounded-lg">
 					Education
 				</NuxtLink>
 				<NuxtLink
 					:to="{ name: 'contacts' }"
+					@click.native="toggleNavbar"
 					class="block text-lg md:text-xl py-2 text-white  hover:bg-blue-lighter transition duration-200 -mx-4 px-4 rounded-lg">
 					Get In Touch
 				</NuxtLink>
@@ -47,10 +53,10 @@
 				<a href="https://github.com/TJacoob" target="_blank" class="mx-3 text-white">
 					<font-awesome-icon :icon="{prefix:'fab',iconName:'github'}" size="2x" />
 				</a>
-				<a href="#" target="_blank" class="mx-3 text-white">
+				<a href="https://twitter.com/tjacoob" target="_blank" class="mx-3 text-white">
 					<font-awesome-icon :icon="{prefix:'fab',iconName:'twitter'}" size="2x" />
 				</a>
-				<a href="#" target="_blank" class="mx-3 text-white">
+				<a href="mailto:tjacobmartins@gmail.com" target="_blank" class="mx-3 text-white">
 					<font-awesome-icon :icon="{prefix:'far',iconName:'envelope'}" size="2x" />
 				</a>
 			</div>
@@ -60,7 +66,12 @@
 
 <script>
 export default {
-name: "Sidebar"
+	name: "Sidebar",
+	methods:{
+		toggleNavbar(){
+			this.$emit('close-navbar');
+		},
+	}
 }
 </script>
 

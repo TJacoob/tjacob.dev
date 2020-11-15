@@ -21,10 +21,14 @@ module.exports = {
 				padding: theme("spacing.4"),
 			}),
 			height: theme => ({
+				"28": "7rem",
 				"72": "18rem",
 				"80": "20rem",
 				"88": "22rem",
 				"96": "24rem",
+			}),
+			width: theme => ({
+				"28": "7rem",
 			}),
 		},
 	},

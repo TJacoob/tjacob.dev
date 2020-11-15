@@ -1,27 +1,86 @@
 <template>
-	<div class="container h-full">
-		<div class="flex pt-12 pb-12 md:mb-3 md:pb-0 md:pt-8 h-full">
-			<div class="w-3/5 bg-white rounded-lg p-5 shadow-md md:mr-10 my-auto">
-				<h2 class="text-2xl text-blue font-semibold">Hello!</h2>
-			</div>
-			<div class="w-2/5 mb-auto">
-				<div class="rounded-lg py-5 px-6 shadow-md bg-gradient-to-tr from-blue to-blue-lighter mb-6">
-					<h2 class="text-2xl text-white font-semibold">Projects</h2>
-				</div>
-				<a href="/files/CV_2020.pdf" target="_blank" class="flex rounded-lg py-5 px-6 shadow-md bg-gradient-to-tr from-blue to-blue-lighter text-white hover:bg-white hover:from-white hover:to-white hover:text-blue transition duration-200">
-					<font-awesome-icon :icon="{prefix:'far',iconName:'file-alt'}" size="4x" class="my-auto mr-5" />
-					<div>
-						<h2 class="text-2xl font-semibold leading-tight mb-1">Curriculum</h2>
-						<div class="text-md leading-snug">If you prefer a short resume, you can download my Curriculum Vitae here.</div>
+	<div class="h-screen">
+		<div class="w-full bg-blue md:bg-transparent container pt-12 pb-12 md:mb-6 md:pb-0 md:pt-8 md:hidden">
+			<h1 class="text-white md:text-blue font-semibold text-3xl pb-2 border-b-2 border-blue"></h1>
+		</div>
+		<div class="container h-full">
+			<div class="md:flex pt-12 pb-12 md:mb-3 md:pb-0 md:pt-8 h-full -mt-20">
+				<div class="w-full md:w-3/5 flex flex-col md:mr-10 my-auto">
+					<div class="bg-white rounded-lg p-5 shadow-md mb-6">
+						<h2 class="text-2xl text-blue font-semibold mb-3">Hello!</h2>
+						<p>My name is Tomás and I am a Junior Web Developer at <a href="https://softway.pt" target="_blank" class="hover:text-blue transition duration-200">Softway Web Professionals</a> in Cascais. I graduated from Técnico Lisboa in 2019 with a Masters in Engineering and Computer Science majoring in Interaction and Visualization. Currently, I work developing PHP-based websites for a variety of clients, using mostly frontend languages such as HTML, CSS and Javascript. I also enjoy exploring other front-end frameworks such as Vue and React.</p>
 					</div>
-				</a>
+					<h2 class="text-2xl text-blue font-semibold mb-2">Main Skills</h2>
+					<div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-2">
+						<div v-for="skill of skills" :key="skill.slug"
+							 class="flex flex-col md:flex-row bg-white text-blue border-blue h-24 px-5 py-3 rounded-lg bg-gradient-to-bl group hover:from-blue hover:to-blue-lighter hover:text-white transition duration-200 shadow-md">
+							<div class="mr-auto mb-auto">
+								<span class="font-semibold text-4xl md:text-5xl leading-tight">{{ skill.rating }}</span>
+								<span class="text-gray-500 group-hover:text-gray-300 text-md">/10</span>
+							</div>
+							<span class="ml-auto font-regular text-lg self-center mt-auto">{{ skill.title }}</span>
+						</div>
+					</div>
+					<NuxtLink :to="{ name: 'skills'}" class="ml-auto group mb-6 md:mb-0">
+						<div class="text-blue text-sm uppercase font-semibold">
+							<div class="inline-block group-hover:transform group-hover:-translate-x-1 transition duration-200">See All</div>
+							<font-awesome-icon :icon="{prefix:'fas',iconName:'chevron-right'}" class="ml-1" />
+						</div>
+					</NuxtLink>
+				</div>
+				<div class="w-full md:w-2/5 my-auto">
+					<div class="rounded-lg pt-5 pb-6 px-6 shadow-md bg-gradient-to-tr from-blue to-blue-lighter mb-6">
+						<h2 class="text-2xl text-white font-semibold mb-4">Latest Projects</h2>
+						<div class="grid grid-cols-1 gap-4">
+							<nuxt-link v-for="project of projects" :to="{ name: 'projects-slug', params: { slug: project.slug }}" :key="project.slug"
+									   class="flex overflow-hidden bg-white rounded-lg shadow-md hover:shadow-lg relative h-24 bg-cover bg-center group transition duration-200 text-blue hover:text-white"
+									   :style="{backgroundImage:'url('+require(`~/static/images/${project.image_1}`)+')'}"
+							>
+								<div class="none md:block w-full h-full absolute overflow-hidden bg-white bg-opacity-75 group-hover:bg-opacity-0 z-10 transition duration-200"></div>
+								<div class="my-auto flex flex-col p-4 z-20 relative">
+									<span class="text-2xl font-semibold">{{ project.title }}</span>
+								</div>
+								<font-awesome-icon :icon="{prefix:'fas',iconName:'chevron-right'}" size="lg" class="relative z-20 ml-auto my-auto mr-4 transform group-hover:translate-x-1 transition duration-200" />
+							</nuxt-link>
+							<NuxtLink :to="{ name: 'projects'}" class="ml-auto group">
+								<div class="text-white text-sm uppercase font-semibold">
+									<div class="inline-block group-hover:transform group-hover:-translate-x-1 transition duration-200">See All</div>
+									<font-awesome-icon :icon="{prefix:'fas',iconName:'chevron-right'}" class="ml-1" />
+								</div>
+							</NuxtLink>
+						</div>
+					</div>
+					<a href="/files/CV_2020.pdf" target="_blank" class="flex rounded-lg py-5 px-6 shadow-md bg-gradient-to-tr from-blue to-blue-lighter text-white hover:bg-white hover:from-white hover:to-white hover:text-blue transition duration-200 mb-8 md:mb-0">
+						<font-awesome-icon :icon="{prefix:'far',iconName:'file-alt'}" size="4x" class="my-auto mr-5" />
+						<div>
+							<h2 class="text-2xl font-semibold leading-tight mb-1">Curriculum</h2>
+							<div class="text-md leading-snug">If you prefer a short resume, you can download my Curriculum Vitae here.</div>
+						</div>
+					</a>
+				</div>
 			</div>
 		</div>
 	</div>
 </template>
 
 <script>
-export default {}
+export default {
+	async asyncData({ $content, params }) {
+		const projects = await $content('projects', params.slug)
+			.only(['title', 'image_1', 'slug'])
+			.sortBy('endYear', 'desc')
+			.limit(2)
+			.fetch()
+
+		const skills = await $content('skills', params.slug)
+			.sortBy('rating', 'desc')
+			.limit(3)
+			.fetch()
+
+		return { projects, skills }
+	},
+
+}
 </script>
 
 <style>

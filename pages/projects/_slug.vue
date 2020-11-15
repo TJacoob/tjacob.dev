@@ -3,11 +3,11 @@
 		<nuxt-link :to="{ name: 'projects'}" class="block w-full bg-blue md:bg-transparent container pt-12 pb-16 md:mb-6 md:pb-0 group">
 			<div class="text-white md:text-gray-500 text-md font-semibold pb-2 border-b border-white md:border-gray-500 uppercase">
 				<font-awesome-icon :icon="{prefix:'fas',iconName:'chevron-left'}" class="mr-2" />
-				<div class="inline-block group-hover:transform group-hover:translate-x-1 transition duration-200">Projects</div>
+				<div class="inline-block group-hover:transform group-hover:translate-x-1 transition duration-200">All Projects</div>
 			</div>
 		</nuxt-link>
 		<article class="container">
-			<div class="flex flex-col md:flex-row">
+			<div class="flex flex-col md:flex-row -mr-4">
 				<!-- Slider -->
 				<div class="md:w-3/5 h-64 md:h-96 pattern-diagonal flex overflow-hidden shadow-lg rounded-t-lg md:rounded-lg relative z-20 md:z-10 -mt-12 md:my-8 ">
 					<!-- Controls -->
@@ -18,7 +18,7 @@
 					</div>
 					<div @click="slideRight" v-show="moreThanOneSlide" class="absolute z-20 text-blue w-10 h-full flex inset-y-0 right-0 group cursor-pointer md:mr-6">
 						<font-awesome-icon id="slideRight" :icon="{prefix:'fas',iconName:'chevron-right'}" size="2x"
-										   class="mx-auto my-auto transition duration-200 group-hover:transform group-hover:-translate-x-2"
+										   class="mx-auto my-auto transition duration-200 group-hover:transform group-hover:translate-x-2"
 						/>
 					</div>
 					<!-- Slides -->
@@ -35,7 +35,7 @@
 						<img :src="require(`~/static/images/${project.image_4}`)" class="h-full w-auto mx-auto"/>
 					</div>
 				</div>
-				<div class="md:w-2/5 bg-blue-lighter text-white rounded-b-md md:rounded-md py-8 px-6 md:-mx-4 z-10 md:z-20 shadow-md flex flex-col -mt-4 md:mt-0">
+				<div class="md:w-2/5 bg-blue-lighter text-white rounded-b-md md:rounded-md py-8 px-6 md:px-8 md:-ml-4 z-10 md:z-20 shadow-md flex flex-col -mt-4 md:mt-0">
 					<h1 class="text-3xl font-semibold mb-5 pb-3 border-b-2 border-white ">
 						{{ project.title }}
 						<span class="font-normal text-gray-300 text-xl">({{ project.year }})</span>

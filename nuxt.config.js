@@ -4,6 +4,11 @@ export default {
 		host: '0.0.0.0' // default: localhost
 	},
 
+	publicRuntimeConfig: {
+		baseURL: process.env.BASE_URL,
+		googleAnalytics: process.env.GA_ID
+	},
+
 	// Target (https://go.nuxtjs.dev/config-target)
 	target: 'static',
 
@@ -52,7 +57,8 @@ export default {
 		// https://go.nuxtjs.dev/content
 		'@nuxt/content',
 		'nuxt-purgecss',
-		'@tailwindcss/ui'
+		'@tailwindcss/ui',
+		'@nuxtjs/google-gtag',
 	],
 
 	purgeCSS: {
@@ -92,4 +98,18 @@ export default {
 			stage: 1 // see https://tailwindcss.com/docs/using-with-preprocessors#future-css-featuress
 		}
 	},
+
+	// Google Tag Manager Settings
+	'google-gtag': {
+		id: process.env.GA_ID,
+		config: {
+			anonymize_ip: true, // anonymize IP
+			send_page_view: false, // might be necessary to avoid duplicated page track on page reload
+			linker: {
+				domains: [process.env.URL]
+			}
+		},
+		debug: true, // enable to track in dev mode
+		disableAutoPageTrack: false, // disable if you don't want to track each page route with router.afterEach(...).
+	}
 }
