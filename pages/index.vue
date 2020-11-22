@@ -8,7 +8,7 @@
 				<div class="w-full md:w-3/5 flex flex-col md:mr-10 my-auto">
 					<div class="bg-white rounded-lg p-5 shadow-md mb-6">
 						<h2 class="text-2xl text-blue font-semibold mb-3">Hello!</h2>
-						<p>My name is Tomás and I am a Junior Web Developer at <a href="https://softway.pt" target="_blank" class="hover:text-blue transition duration-200">Softway Web Professionals</a> in Cascais. I graduated from Técnico Lisboa in 2019 with a Masters in Engineering and Computer Science majoring in Interaction and Visualization. Currently, I work developing PHP-based websites for a variety of clients, using mostly frontend languages such as HTML, CSS and Javascript. I also enjoy exploring other front-end frameworks such as Vue and React.</p>
+						<p>My name is Tomás and I am a Junior Web Developer at <a href="https://softway.pt" target="_blank" class="text-blue hover:text-blue-lighter transition duration-200">Softway Web Professionals</a> in Cascais. I graduated from Técnico Lisboa in 2019 with a Masters in Engineering and Computer Science majoring in Interaction and Visualization. Currently, I work developing PHP-based websites for a variety of clients, using mostly frontend languages such as HTML, CSS and Javascript. I also enjoy exploring other front-end frameworks such as Vue and React.</p>
 					</div>
 					<h2 class="text-2xl text-blue font-semibold mb-2">Main Skills</h2>
 					<div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-2">

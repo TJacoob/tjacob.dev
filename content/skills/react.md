@@ -1,5 +1,4 @@
 ---
-title: SASS
+title: React
 rating: 5
 ---
-

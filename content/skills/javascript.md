@@ -1,8 +1,4 @@
 ---
 title: Javascript
-description: 'Javascript'
-rating: 3
+rating: 8
 ---
-
-# Title
-I can do Javascript. Very good.

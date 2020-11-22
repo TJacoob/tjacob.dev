@@ -15,16 +15,12 @@
 				</div>
 			</div>
 			<div class="mb-4">
-				<div class="">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus consequuntur est ex illum neque officiis quaerat quasi quidem quos voluptates. Beatae blanditiis dolorum excepturi facere ipsum laboriosam recusandae reiciendis! Libero.</div>
+				<div class="">My main skills revolve around frontend development. I have experience with modern frameworks, with a preference for VueJS. I complement this with a more light experience on fullstack frameworks and javascript-based backend libraries.</div>
 			</div>
-			<div class="grid grid-cols-2 md:grid-cols-6 gap-4 md:gap-6 mb-4">
+			<div class="grid grid-cols-2 md:grid-cols-8 gap-4 md:gap-4 mb-4">
 				<div v-for="skill of otherSkills" :key="skill.slug"
-					 class="flex flex-col md:flex-row bg-white text-blue border-blue h-24 px-5 py-3 rounded-lg bg-gradient-to-bl group hover:from-blue hover:to-blue-lighter hover:text-white transition duration-200 shadow-md">
-					<div class="mr-auto mb-auto">
-						<span class="font-semibold text-4xl md:text-5xl leading-tight">{{ skill.rating }}</span>
-						<span class="text-gray-500 group-hover:text-gray-300 text-md">/10</span>
-					</div>
-					<span class="ml-auto font-regular text-lg self-center mt-auto">{{ skill.title }}</span>
+					 class="flex flex-col md:flex-row bg-white text-blue border-blue h-16 px-5 py-3 rounded-lg bg-gradient-to-bl group hover:from-blue hover:to-blue-lighter hover:text-white transition duration-200 shadow-md">
+					<span class="m-auto font-regular text-xl">{{ skill.title }}</span>
 				</div>
 			</div>
 		</div>

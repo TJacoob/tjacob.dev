@@ -1,6 +1,5 @@
 ---
-title: CSS
-description: 'CSS'
+title: HTML / CSS
 rating: 8
 ---
 

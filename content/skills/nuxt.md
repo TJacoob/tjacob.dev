@@ -1,8 +1,4 @@
 ---
 title: NuxtJS
-description: 'NuxtJS'
-rating: 1
+rating: 6
 ---
-
-### Title
-Something Something NuxtJS is nice.

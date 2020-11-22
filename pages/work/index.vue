@@ -6,7 +6,7 @@
 		<div class="container">
 			<div class="grid grid-cols-1 gap-24 md:gap-10 mt-8 md:mt-8 mb-4">
 				<div v-for="work of works" :key="work.slug" class="flex flex-col md:flex-row bg-white rounded-3xl shadow-md md:ml-12">
-					<img class="inline w-32 h-32 rounded-full border-2 border-blue-lighter bg-white mx-auto -mt-20 md:-ml-16 md:mt-5" src="https://via.placeholder.com/150"  />
+					<img class="inline w-32 h-32 rounded-full border-2 border-blue-lighter bg-white mx-auto -mt-20 md:-ml-16 md:my-auto" :src="require(`~/static/images/${work.logo}`)"  />
 					<div class="px-5 pt-3 pb-8 md:pt-5 md:pb-6">
 						<h2 class="inline text-blue font-semibold text-xl">
 							{{ work.position }}

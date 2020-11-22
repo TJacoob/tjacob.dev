@@ -1,5 +1,4 @@
 ---
-title: SASS
+title: Photoshop
 rating: 5
 ---
-

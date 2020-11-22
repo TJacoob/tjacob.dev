@@ -22,7 +22,7 @@
 					<span class="font-regular text-lg my-auto">tjacobmartins@gmail.com</span>
 				</a>
 			</div>
-			<span class="mb-3">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium, aspernatur blanditiis, doloribus obcaecati odit praesentium quaerat quasi quidem recusandae sint sunt tenetur veniam voluptates? Aspernatur blanditiis commodi earum minus saepe!</span>
+			<span class="mb-3">If you enjoyed my work and want to know me a little better, or perhaps, make a work proposal, you can use any of the options above.</span>
 		</div>
 	</div>
 </template>
