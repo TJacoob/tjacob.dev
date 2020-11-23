@@ -33,10 +33,10 @@
 						<h2 class="text-2xl text-white font-semibold mb-4">Latest Projects</h2>
 						<div class="grid grid-cols-1 gap-4">
 							<nuxt-link v-for="project of projects" :to="{ name: 'projects-slug', params: { slug: project.slug }}" :key="project.slug"
-									   class="flex overflow-hidden bg-white rounded-lg shadow-md hover:shadow-lg relative h-24 bg-cover bg-center group transition duration-200 text-blue hover:text-white"
+									   class="flex overflow-hidden bg-white rounded-lg shadow-md hover:shadow-lg relative h-24 bg-cover bg-center group transition duration-200 text-blue"
 									   :style="{backgroundImage:'url('+require(`~/static/images/${project.image_1}`)+')'}"
 							>
-								<div class="none md:block w-full h-full absolute overflow-hidden bg-white bg-opacity-75 group-hover:bg-opacity-0 z-10 transition duration-200"></div>
+								<div class="none md:block w-full h-full absolute overflow-hidden bg-white bg-opacity-75 group-hover:bg-opacity-25 z-10 transition duration-200"></div>
 								<div class="my-auto flex flex-col p-4 z-20 relative">
 									<span class="text-2xl font-semibold">{{ project.title }}</span>
 								</div>

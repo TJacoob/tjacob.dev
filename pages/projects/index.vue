@@ -6,10 +6,11 @@
 		<div class="container">
 			<div class="grid grid-cols-1 md:grid-cols-3 gap-8 -mt-12 md:mt-5 mb-5">
 				<nuxt-link v-for="project of projects" :to="{ name: 'projects-slug', params: { slug: project.slug }}" :key="project.slug"
-						   class="flex overflow-hidden bg-white rounded-lg shadow-md hover:shadow-lg relative h-64 md:h-88 bg-cover bg-center group"
+						   class="flex overflow-hidden bg-white rounded-lg shadow-md hover:shadow-lg relative h-64 md:h-64 bg-cover bg-center group"
 						   :style="{backgroundImage:'url('+require(`~/static/images/${project.image_1}`)+')'}"
 				>
-					<div class="none md:block w-full h-full absolute overflow-hidden bg-blue bg-opacity-0 group-hover:bg-opacity-25 z-10 transition duration-200"></div>
+					<div class="w-full h-32 absolute inset-x-0 bottom-0 overflow-hidden bg-gradient-to-t from-black to-transparent opacity-50 group-hover:opacity-0 z-10 transition duration-200"></div>
+					<div class="none md:block w-full h-full absolute overflow-hidden bg-gradient-to-t from-blue to-blue-lighter opacity-0 group-hover:opacity-80 z-10 transition duration-200"></div>
 					<div class="flex flex-col p-4 mt-auto w-full relative z-20 transform md:translate-y-full group-hover:translate-y-0 transition duration-200">
 						<div class="text-white text-right -mt-16">
 							<p class="text-2xl mb-2 md:mb-4 transform group-hover:translate-y-2 transition duration-200 font-semibold">
@@ -26,7 +27,7 @@
 					</div>
 				</nuxt-link>
 			</div>
-			<p class="leading-snug">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam ultrices quis mi ut tristique. Proin id consectetur lectus. Integer fringilla, orci sit amet elementum auctor, purus justo hendrerit lorem, quis lacinia ipsum eros nec dui. Quisque viverra risus posuere mattis euismod. Praesent vel facilisis dolor.</p>
+			<p class="leading-snug">Over the years I have developed some free-lancing projects as well as extra-curricular and personal projects. I choose to highlight some of them alongside other done during my position as a Junior Web Developer at Softway.</p>
 		</div>
 	</div>
 </template>
@@ -66,6 +67,7 @@ export default {
 	async asyncData({ $content, params }) {
 		const projects = await $content('projects', params.slug)
 			//.only(['title', 'description', 'img', 'slug', 'author'])
+			.sortBy('level')
 			.fetch()
 
 		return { projects }

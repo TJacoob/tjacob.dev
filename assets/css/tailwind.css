@@ -13,6 +13,8 @@
 		a:hover{
 			@apply text-blue-lighter transition duration-200;
 		}
+		p{ @apply mb-2 }
+		p:last-of-type{ @apply mb-0 }
 	}
 }
 

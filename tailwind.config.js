@@ -30,6 +30,9 @@ module.exports = {
 			width: theme => ({
 				"28": "7rem",
 			}),
+			opacity: theme => ({
+				"80": "0.8"
+			}),
 		},
 	},
 	variants: {
@@ -39,6 +42,7 @@ module.exports = {
 		translate: ['responsive', 'hover', 'focus', 'group-hover'],
 		gradientColorStops: ['responsive', 'hover', 'focus', 'active', 'group-hover'],
 		backgroundOpacity: ['responsive', 'hover', 'focus', 'active', 'group-hover'],
+		opacity: ['responsive', 'hover', 'focus', 'active', 'group-hover'],
 		margin: ['responsive', 'hover', 'focus', 'active', 'group-hover'],
 		transitionProperty: ['responsive', 'hover', 'focus'],
 	},

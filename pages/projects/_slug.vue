@@ -22,16 +22,16 @@
 						/>
 					</div>
 					<!-- Slides -->
-					<div id="slide-1" v-show="project.image_1 !== undefined" class="absolute inset-0 w-full h-full text-white flex items-center justify-center text-5xl transition-all ease-in-out duration-1000 transform translate-x-0 slide">
+					<div id="slide-1" v-if="project.image_1 !== undefined" class="absolute inset-0 w-full h-full text-white flex items-center justify-center text-5xl transition-all ease-in-out duration-1000 transform translate-x-0 slide">
 						<img :src="require(`~/static/images/${project.image_1}`)" class="h-full w-auto mx-auto"/>
 					</div>
-					<div id="slide-2" v-show="project.image_2 !== undefined" class="absolute inset-0 w-full h-full text-white flex items-center justify-center text-5xl transition-all ease-in-out duration-1000 transform translate-x-full slide">
+					<div id="slide-2" v-if="project.image_2 !== undefined" class="absolute inset-0 w-full h-full text-white flex items-center justify-center text-5xl transition-all ease-in-out duration-1000 transform translate-x-full slide">
 						<img :src="require(`~/static/images/${project.image_2}`)" class="h-full w-auto mx-auto"/>
 					</div>
-					<div id="slide-3" v-show="project.image_3 !== undefined" class="absolute inset-0 w-full h-full text-white flex items-center justify-center text-5xl transition-all ease-in-out duration-1000 transform translate-x-full slide">
+					<div id="slide-3" v-if="project.image_3 !== undefined" class="absolute inset-0 w-full h-full text-white flex items-center justify-center text-5xl transition-all ease-in-out duration-1000 transform translate-x-full slide">
 						<img :src="require(`~/static/images/${project.image_3}`)" class="h-full w-auto mx-auto"/>
 					</div>
-					<div id="slide-4" v-show="project.image_4 !== undefined" class="absolute inset-0 w-full h-full text-white flex items-center justify-center text-5xl transition-all ease-in-out duration-1000 transform translate-x-full slide">
+					<div id="slide-4" v-if="project.image_4 !== undefined" class="absolute inset-0 w-full h-full text-white flex items-center justify-center text-5xl transition-all ease-in-out duration-1000 transform translate-x-full slide">
 						<img :src="require(`~/static/images/${project.image_4}`)" class="h-full w-auto mx-auto"/>
 					</div>
 				</div>
