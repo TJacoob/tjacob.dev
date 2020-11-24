@@ -1,12 +1,12 @@
 <template>
 	<div>
-		<div class="w-full bg-blue md:bg-transparent container pt-12 pb-12 md:mb-6 md:pb-0 md:pt-8">
-			<h1 class="text-white md:text-blue font-semibold text-3xl pb-2 border-b-2 border-blue">About Me</h1>
+		<div class="w-full bg-blue lg:bg-transparent lg:container pt-12 pb-12 lg:mb-6 lg:pb-0 lg:pt-8">
+			<h1 class="text-white container lg:px-0 lg:text-blue font-semibold text-3xl pb-2 border-b-2 border-blue">About Me</h1>
 		</div>
 		<div class="container">
-			<div class="flex flex-col md:flex-row -mr-4 w-full ">
+			<div class="flex flex-col lg:flex-row -mr-4 w-full ">
 				<!-- Slider -->
-				<div class="md:w-2/5 bg-blue-lighter text-white rounded-t-md md:rounded-md py-8 px-6 md:px-8 z-10 md:z-20 shadow-md flex flex-col -mt-12 md:mt-0">
+				<div class="lg:w-2/5 bg-blue-lighter text-white rounded-t-md lg:rounded-md py-8 px-6 lg:px-8 z-10 lg:z-20 shadow-md flex flex-col -mt-12 lg:mt-0">
 					<div class="mb-5">
 						<p class="mb-2">During business hours I am a Junior Web Developer. Why? I believe in creating things, whatever they are, and Web Development is a way to create: websites, stores, management platforms, you name it. Through careful design and implementation, it is possible to make pretty much any tool a new reality for anyone around the world.</p>
 						<p class="mb-2">Tech-wise, I am an enthusiast of frontend frameworks, such as Vue or React, as they enable developers to build quickly and easily. Either proofs-of-concept or full-blown applications.</p>
@@ -14,14 +14,14 @@
 					</div>
 
 				</div>
-				<div class="md:w-3/5 h-64 md:h-96 pattern-diagonal flex overflow-hidden shadow-lg rounded-b-lg md:rounded-lg relative z-20 md:z-10 -mt-4 md:my-8 md:-mx-4 ">
+				<div class="lg:w-3/5 h-64 lg:h-96 pattern-diagonal flex overflow-hidden shadow-lg rounded-b-lg lg:rounded-lg relative z-20 lg:z-10 -mt-4 lg:my-8 lg:-mx-4 ">
 					<!-- Controls -->
-					<div @click="slideLeft" v-show="moreThanOneSlide" class="absolute z-20 text-blue-lighter w-10 h-full flex inset-y-0 left-0 group cursor-pointer md:ml-6">
+					<div @click="slideLeft" v-show="moreThanOneSlide" class="absolute z-20 text-blue-lighter w-10 h-full flex inset-y-0 left-0 group cursor-pointer lg:ml-6">
 						<font-awesome-icon id="slideLeft"  :icon="{prefix:'fas',iconName:'chevron-left'}" size="2x"
 										   class="mx-auto my-auto transition duration-200 group-hover:transform group-hover:-translate-x-2 opacity-25"
 						/>
 					</div>
-					<div @click="slideRight" v-show="moreThanOneSlide" class="absolute z-20 text-blue w-10 h-full flex inset-y-0 right-0 group cursor-pointer md:mr-2">
+					<div @click="slideRight" v-show="moreThanOneSlide" class="absolute z-20 text-blue w-10 h-full flex inset-y-0 right-0 group cursor-pointer lg:mr-2">
 						<font-awesome-icon id="slideRight" :icon="{prefix:'fas',iconName:'chevron-right'}" size="2x"
 										   class="mx-auto my-auto transition duration-200 group-hover:transform group-hover:translate-x-2"
 						/>

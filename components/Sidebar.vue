@@ -1,14 +1,14 @@
 <template>
 	<div class="flex flex-col h-full bg-gradient-to-tr from-blue to-blue-lighter">
 		<div class="w-full text-left px-10 py-4 md:py-20 my-auto md:my-0">
-			<div class="w-32 h-32 mb-3">
+			<div class="w-32 h-32 mb-3 sm:hidden md:block">
 				<NuxtLink :to="{name: 'index'}" @click.native="toggleNavbar">
 					<img src="~/assets/images/profile.png" class="rounded-full border-4 border-white" />
 				</NuxtLink>
 			</div>
-			<span class="block text-white text-3xl font-semibold leading-tight">Tomás Jacob</span>
-			<span class="block text-white text-xl leading-tight pb-2">Junior Web Developer</span>
-			<nav class="my-4 py-4 border-t border-b">
+			<span class="block sm:hidden md:block text-white text-3xl font-semibold leading-tight">Tomás Jacob</span>
+			<span class="block sm:hidden md:block text-white text-xl leading-tight pb-2">Junior Web Developer</span>
+			<nav class="my-4 py-4 sm:pt-0 sm:mt-0 md:pt-4 border-t sm:border-t-0 md:border-t border-b">
 				<NuxtLink
 					:to="{ name: 'aboutme' }"
 					@click.native="toggleNavbar"

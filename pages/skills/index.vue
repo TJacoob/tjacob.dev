@@ -1,14 +1,14 @@
 <template>
 	<div>
-		<div class="w-full bg-blue md:bg-transparent container pt-12 pb-12 md:mb-3 md:pb-0 md:pt-8">
-			<h1 class="text-white md:text-blue font-semibold text-3xl pb-2 border-b-2 border-blue">Skills</h1>
+		<div class="w-full bg-blue lg:bg-transparent lg:container pt-12 pb-12 lg:mb-3 lg:pb-0 lg:pt-8">
+			<h1 class="text-white container lg:px-0 lg:text-blue font-semibold text-3xl pb-2 border-b-2 border-blue">Skills</h1>
 		</div>
 		<div class="container">
-			<div class="grid grid-cols-2 md:grid-cols-6 gap-4 md:gap-6 -mt-12 md:mt-8 mb-4">
+			<div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 lg:gap-6 -mt-12 lg:mt-8 mb-4">
 				<div v-for="skill of topSkills" :key="skill.slug"
-					 class="flex flex-col md:flex-row bg-white text-blue border-blue h-24 px-5 py-3 rounded-lg bg-gradient-to-bl group hover:from-blue hover:to-blue-lighter hover:text-white transition duration-200 shadow-md">
+					 class="flex flex-col lg:flex-row bg-white text-blue border-blue h-24 px-5 py-3 rounded-lg bg-gradient-to-bl group hover:from-blue hover:to-blue-lighter hover:text-white transition duration-200 shadow-md">
 					<div class="mr-auto mb-auto">
-						<span class="font-semibold text-4xl md:text-5xl leading-tight">{{ skill.rating }}</span>
+						<span class="font-semibold text-4xl lg:text-5xl leading-tight">{{ skill.rating }}</span>
 						<span class="text-gray-500 group-hover:text-gray-300 text-md">/10</span>
 					</div>
 					<span class="ml-auto font-regular text-lg self-center mt-auto">{{ skill.title }}</span>
@@ -17,9 +17,9 @@
 			<div class="mb-4">
 				<div class="">My main skills revolve around frontend development. I have experience with modern frameworks, with a preference for VueJS. I complement this with a more light experience on fullstack frameworks and javascript-based backend libraries.</div>
 			</div>
-			<div class="grid grid-cols-2 md:grid-cols-8 gap-4 md:gap-4 mb-4">
+			<div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-8 gap-4 lg:gap-4 mb-4">
 				<div v-for="skill of otherSkills" :key="skill.slug"
-					 class="flex flex-col md:flex-row bg-white text-blue border-blue h-16 px-5 py-3 rounded-lg bg-gradient-to-bl group hover:from-blue hover:to-blue-lighter hover:text-white transition duration-200 shadow-md">
+					 class="flex flex-col lg:flex-row bg-white text-blue border-blue h-16 px-5 py-3 rounded-lg bg-gradient-to-bl group hover:from-blue hover:to-blue-lighter hover:text-white transition duration-200 shadow-md">
 					<span class="m-auto font-regular text-xl">{{ skill.title }}</span>
 				</div>
 			</div>

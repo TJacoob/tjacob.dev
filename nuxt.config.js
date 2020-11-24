@@ -21,9 +21,23 @@ export default {
 				name: 'viewport',
 				content: 'width=device-width, initial-scale=1',
 			},
-			{ hid: 'description', name: 'description', content: '' },
+			{
+				hid: 'description',
+				name: 'description',
+				content: 'TJacob Junior Web Developer Portfolium',
+			},
+			{ hid:'msapplication', name: 'msapplication-TileColor', content: '#ffffff' },
+			{ hid:'them-color', name: 'theme-color', content: '#ffffff' },
+			{ hid: 'og:title', name: 'og:title', content: 'tjacob.dev' },
+			{ hid: 'og:image', name: 'og:image', content: '/thumb.png' },
 		],
-		link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
+		link: [
+			{ rel: 'apple-touch-icon', sizes: '180x180', href: '/apple-touch-icon.png' },
+			{ rel: 'icon', type:'image/png', sizes: '32x32', href: '/favicon-32x32.png' },
+			{ rel: 'icon', type:'image/png', sizes: '16x16', href: '/favicon-16x16.png' },
+			{ rel: 'manifest', href: '/site.webmanifest' },
+			{ rel: 'mask-icon', href: '/safari-pinned-tab.svg', color:"#5bbad5" },
+		],
 	},
 
 	// Global CSS (https://go.nuxtjs.dev/config-css)
