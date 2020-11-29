@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/blog", {data:[{articles:[{title:"Getting started",description:"Empower your NuxtJS application with @nuxt\u002Fcontent module: write in a content\u002F directory and fetch your Markdown, JSON, YAML and CSV files through a MongoDB like API, acting as a Git-based Headless CMS.",slug:"article-1"}]}],fetch:[],mutations:void 0});
